@@ -1,8 +1,16 @@
 # Studio LETOH Base
 
+[![test](https://github.com/macosai/studioletoh-base/actions/workflows/test.yml/badge.svg)](https://github.com/macosai/studioletoh-base/actions/workflows/test.yml)
+
 Studio LETOH Base is a small Lua library for the parts of ReaScript work that keep coming back: tempo math, dB conversion, RGB/HEX colors, and a simple key=value config format.
 
 It has no `reaper.*` calls. It does not draw a UI, read project files, or install anything. Those jobs belong to the product that uses the library.
+
+## Who this is for
+
+This is for Lua developers who write ReaScripts and want tested helpers for tempo math, dB conversion, colors, and simple config text. It is also for people who want to see the foundation we are building for the Studio LETOH tools.
+
+If you want a finished tool, use the [Studio LETOH store](https://store.letoh.jp). If you bought a product, its complete Lua source is in the download.
 
 ## What is in here
 
@@ -16,15 +24,35 @@ It has no `reaper.*` calls. It does not draw a UI, read project files, or instal
 
 The modules do not require each other. You can use `timing` without pulling in `color`, and the tests run each module on its own.
 
+## Documentation
+
+- [API reference](docs/API.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Compatibility](docs/COMPATIBILITY.md)
+- [Release checklist](docs/RELEASE.md)
+
 ## What this is not
 
 This is not a ReaScript product. It has no windows, actions, installers, or manuals. If you want a finished tool, look at the [Studio LETOH store](https://store.letoh.jp).
 
 This is not the product source. The product code stays private. The public repo is the foundation layer only.
 
-This is not the Palette product. `color.palette` is a small helper for named color slots. The Palette product is an action palette, and its code is not in this repo.
+This is not the [Palette](https://store.letoh.jp/b/palette) product. `color.palette` is a small helper for named color slots. The Palette product is an action palette, and its code is not in this repo.
 
 This is not a REAPER wrapper. If a function needs the project tempo, the product reads it and passes it in. If a function needs a REAPER color integer, the product converts it.
+
+## Products
+
+The product code is not in this repository. These are the finished tools that ship with their own source, installers, and manuals:
+
+- [HueGuide](https://store.letoh.jp/b/hueguide) and [HueGuide Free](https://store.letoh.jp/b/hueguide-free)
+- [Palette](https://store.letoh.jp/b/palette)
+- [Scribe](https://store.letoh.jp/b/scribe)
+- [Gauge](https://store.letoh.jp/b/gauge)
+- [RDMetric](https://store.letoh.jp/b/rdmetric)
+- [Chisel](https://store.letoh.jp/b/chisel) and [Chisel Free](https://store.letoh.jp/b/chisel-free)
+
+The base is the foundation we are building for these tools. It is not a product.
 
 ## Requirements
 
@@ -107,8 +135,15 @@ Bug reports and documentation fixes are welcome. Pull requests are not accepted 
 
 The library uses semantic versioning. `letoh.base.version.api` goes up when the API breaks. See [CHANGELOG.md](CHANGELOG.md).
 
+## About Studio LETOH
+
+Studio LETOH is a sound studio in Japan. We make music, sound design, spatial audio, and data sonification, and we run a small recording studio. We also build tools for REAPER. The links below cover the studio, the services, and the store.
+
 ## Links
 
+- Studio: https://letoh.jp
+- Profile: https://letoh.jp/profile/
+- Services: https://letoh.jp/order/
 - Store: https://store.letoh.jp
 - Terms: https://store.letoh.jp/legal-disclosure-based-on-japan-s-specified-commercial-transactions-act
 - Issues: https://github.com/macosai/studioletoh-base/issues
