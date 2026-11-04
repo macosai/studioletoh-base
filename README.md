@@ -1,10 +1,27 @@
 # Studio LETOH Base
 
-[![test](https://github.com/macosai/studioletoh-base/actions/workflows/test.yml/badge.svg)](https://github.com/macosai/studioletoh-base/actions/workflows/test.yml)
+[![test](https://github.com/macosai/studioletoh-base/actions/workflows/test.yml/badge.svg)](https://github.com/macosai/studioletoh-base/actions/workflows/test.yml) [![release](https://img.shields.io/github/v/release/macosai/studioletoh-base)](https://github.com/macosai/studioletoh-base/releases) ![Lua](https://img.shields.io/badge/Lua-5.1%20%7C%205.4-blue) ![license](https://img.shields.io/badge/license-source--available-lightgrey)
 
 Studio LETOH Base is a small Lua library for the parts of ReaScript work that keep coming back: tempo math, dB conversion, RGB/HEX colors, and a simple key=value config format.
 
 It has no `reaper.*` calls. It does not draw a UI, read project files, or install anything. Those jobs belong to the product that uses the library.
+
+Status: 0.1.0, pre-1.0. The API may change.
+
+License: source-available. Personal use only. No resale or redistribution. Commercial use needs a separate license.
+
+## Quick start
+
+Add the repo to `package.path` first (see [Install](#install)), then:
+
+```lua
+local timing = require("letoh.base.timing")
+local db = require("letoh.base.db")
+
+local bpm = 120
+print(timing.format_ms(timing.ms_per_beat(bpm))) -- 500.0 ms
+print(db.format_db(db.round_to_step(-6.05, 0.1))) -- -6.0 dB
+```
 
 ## Who this is for
 
@@ -72,17 +89,6 @@ local db = require("letoh.base.db")
 ```
 
 On Windows, use forward slashes or escape the backslashes. `package.path` follows the same rules as any other Lua path.
-
-## Quick start
-
-```lua
-local timing = require("letoh.base.timing")
-local db = require("letoh.base.db")
-
-local bpm = 120
-print(timing.format_ms(timing.ms_per_beat(bpm))) -- 500.0 ms
-print(db.format_db(db.round_to_step(-6.05, 0.1))) -- -6.0 dB
-```
 
 ## Examples
 
