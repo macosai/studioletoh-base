@@ -45,7 +45,7 @@ The repository stays private until this list is done. Do not change the visibili
 
 ## Before the first public release
 
-The first public release should have a clean history. The current `master` branch was rebuilt as a single initial commit before publication. If you need to change that, do it while the repo is still private.
+The first public release should have a clean history. The current `master` branch was rebuilt from a clean initial commit before publication. The old concept-demo history is not in this repository. If you need to change the history, do it while the repo is still private.
 
 ## After the release
 
