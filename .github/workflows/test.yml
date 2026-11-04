@@ -1,0 +1,32 @@
+name: test
+
+"on":
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        lua: ["5.1", "5.4"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Lua
+        run: sudo apt-get update && sudo apt-get install -y lua${{ matrix.lua }}
+
+      - name: Run tests
+        run: lua${{ matrix.lua }} tests/run.lua
+
+      - name: Check syntax
+        run: find letoh tests examples -name '*.lua' -print0 | xargs -0 -n1 luac${{ matrix.lua }} -p
+
+      - name: Check base has no REAPER calls
+        run: |
+          if grep -R -n "reaper\.[A-Za-z_]" letoh/base; then
+            echo "letoh/base must not call reaper.*"
+            exit 1
+          fi
