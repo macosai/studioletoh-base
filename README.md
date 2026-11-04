@@ -56,6 +56,9 @@ The modules do not require each other. You can use `timing` without pulling in `
 
 ## Products
 
+![Studio LETOH tools running in REAPER](docs/tools-in-reaper.webp)
+_The Studio LETOH tools running in one REAPER session._
+
 The product code is not in this repository. These are the finished tools that ship with their own source, installers, and manuals:
 
 - [HueGuide](https://store.letoh.jp/b/hueguide) and [HueGuide Free](https://store.letoh.jp/b/hueguide-free)
