@@ -50,13 +50,9 @@ The modules do not require each other. You can use `timing` without pulling in `
 
 ## What this is not
 
-This is not a ReaScript product. It has no windows, actions, installers, or manuals. If you want a finished tool, look at the [Studio LETOH store](https://store.letoh.jp).
-
-This is not the product source. The product code stays private. The public repo is the foundation layer only.
-
-This is not the [Palette](https://store.letoh.jp/b/palette) product. `color.palette` is a small helper for named color slots. The Palette product is an action palette, and its code is not in this repo.
-
-This is not a REAPER wrapper. If a function needs the project tempo, the product reads it and passes it in. If a function needs a REAPER color integer, the product converts it.
+- **Not a product.** No windows, actions, installers, or manuals. Finished tools are at the [store](https://store.letoh.jp).
+- **Not the product source.** Product code stays private. This repo is the foundation layer only.
+- **Not the Palette product.** `color.palette` is a small helper for named color slots; the Palette action palette ships separately.
 
 ## Products
 
@@ -69,7 +65,7 @@ The product code is not in this repository. These are the finished tools that sh
 - [RDMetric](https://store.letoh.jp/b/rdmetric)
 - [Chisel](https://store.letoh.jp/b/chisel) and [Chisel Free](https://store.letoh.jp/b/chisel-free)
 
-The base is the foundation we are building for these tools. It is not a product.
+The base is the foundation we are building for these tools.
 
 ## Requirements
 
